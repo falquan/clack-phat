@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class Sheet extends Component {
-  render() {
+  render(sheet) {
     return (
       <div>{this.props}</div>
     );
