@@ -4,12 +4,13 @@ class Set extends Component {
   render() {
     return (
       <table>
-        <th>header</th>
-        <tr>
         {this.props.sets.map(anSet => 
-          <td>{anSet}</td>
+          <tr>
+            {anSet.map(exercise =>
+              <td className="left"><pre>{exercise}</pre></td>
+            )}
+          </tr>
         )}
-        </tr>
       </table>
     );
   }

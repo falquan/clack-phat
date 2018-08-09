@@ -6,7 +6,6 @@ class SheetList extends Component {
 
   componentDidMount()
   {
-    // https://sheets.googleapis.com/v4/spreadsheets/18CjgZsVNKzity6LOafDwSCx3xjBQeUKLVzgDRE4W5cw/values/A1:P12?key=AIzaSyAPrdN8mGO-3guf4lUetqYuyWjwK4273B0
     fetch('https://sheets.googleapis.com/v4/spreadsheets/18CjgZsVNKzity6LOafDwSCx3xjBQeUKLVzgDRE4W5cw/?key=AIzaSyAPrdN8mGO-3guf4lUetqYuyWjwK4273B0')
       .then(response => response.json())
       .then(json => this.setState({ sheet: json }))
