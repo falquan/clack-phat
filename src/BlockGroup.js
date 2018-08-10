@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import WorkoutBlock from './WorkoutBlock';
+import Block from './Block';
 
-class SheetList extends Component {
+class BlockGroup extends Component {
   state = { sheet: { sheets: [] } }
 
   componentDidMount()
@@ -16,10 +16,10 @@ class SheetList extends Component {
     return (
       <div>
         <h2>Choose a block:</h2>
-        <WorkoutBlock blocks={this.state.sheet.sheets} />
+        <Block blocks={this.state.sheet.sheets} />
       </div>
     );
   }
 }
 
-export default SheetList;
+export default BlockGroup;

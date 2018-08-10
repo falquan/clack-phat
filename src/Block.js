@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class WorkoutBlock extends Component {
+class Block extends Component {
   render() {
     return (
       this.props.blocks.map(block => 
@@ -11,4 +11,4 @@ class WorkoutBlock extends Component {
   }
 }
 
-export default WorkoutBlock;
+export default Block;
