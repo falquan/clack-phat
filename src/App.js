@@ -21,7 +21,7 @@ class App extends Component {
   componentDidMount()
   {
     this.getSheetData();
-    this.getWorkoutGroup();
+    this.getWorkoutGroup(this.state.selectedSheet);
   }
 
   render() {
@@ -52,13 +52,13 @@ class App extends Component {
   }
 
   blockChange(selectedSheet) {
-    this.setState({selectedSheet: selectedSheet});
+    this.getWorkoutGroup(selectedSheet);
   }
 
-  getWorkoutGroup()
+  getWorkoutGroup(sheetName)
   {
     let baseSheetUri = 'https://sheets.googleapis.com/v4/spreadsheets/18CjgZsVNKzity6LOafDwSCx3xjBQeUKLVzgDRE4W5cw/values/'
-    let selectedSheet = this.state.selectedSheet;
+    let selectedSheet = sheetName;
     let range = 'A2:P12';
     let apiKey = 'key=AIzaSyAPrdN8mGO-3guf4lUetqYuyWjwK4273B0';
     let uri = baseSheetUri + selectedSheet + '!' + range + '?' + apiKey;
@@ -66,7 +66,10 @@ class App extends Component {
     fetch(uri)
       .then(response => response.json())
       .catch(error => console.error("Something horrible happened...", error))
-      .then(json => this.setState({ workouts: json }));
+      .then(json => {
+        this.setState({ selectedSheet: json.range.split("!")[0] });
+        this.setState({ workouts: json })
+      });
   }
 }
 

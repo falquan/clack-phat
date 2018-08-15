@@ -10,9 +10,9 @@ class WorkoutGroup extends Component {
   }
 
   render() {
-    console.log(this.props.selectedSheet);
     return (
       <div className="WorkoutGroup-workouts">
+        <h3>{this.props.selectedSheet}</h3>
         <Workout workouts={this.props.workoutGroups.values} />
       </div>
     );
