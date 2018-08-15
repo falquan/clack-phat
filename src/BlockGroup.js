@@ -5,6 +5,7 @@ import Block from './Block';
 class BlockGroup extends Component {
   constructor(props) {
     super(props);
+    
     this.blockChange = this.blockChange.bind(this);
   }
 

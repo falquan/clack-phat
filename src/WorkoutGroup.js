@@ -5,10 +5,6 @@ import Workout from './Workout';
 import './WorkoutGroup.css';
 
 class WorkoutGroup extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="WorkoutGroup-workouts">
