@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Block from './Block';
 
 class BlockGroup extends Component {
@@ -10,7 +11,8 @@ class BlockGroup extends Component {
   render() {
     return (
       <nav>
-        <Block blocks={this.props.blocks}
+        <Block
+          blocks={this.props.blocks}
           onBlockChange={this.blockChange} />
       </nav>
     );

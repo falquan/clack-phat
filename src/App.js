@@ -21,6 +21,7 @@ class App extends Component {
   componentDidMount()
   {
     this.getSheetData();
+    this.getWorkoutGroup();
   }
 
   render() {
@@ -33,25 +34,28 @@ class App extends Component {
           blocks={this.state.sheet.sheets}
           onBlockChange={this.blockChange} />
         <WorkoutGroup
-          workoutGroups={this.state.workouts}
-          selectedSheet={this.state.selectedSheet} />
+          selectedSheet={this.state.selectedSheet}
+          workoutGroups={this.state.workouts} />
       </div>
     );
   }
 
-  async getSheetData() {
-    await fetch('https://sheets.googleapis.com/v4/spreadsheets/18CjgZsVNKzity6LOafDwSCx3xjBQeUKLVzgDRE4W5cw/?key=AIzaSyAPrdN8mGO-3guf4lUetqYuyWjwK4273B0')
+  getSheetData() {
+    let baseSheetUri = 'https://sheets.googleapis.com/v4/spreadsheets/18CjgZsVNKzity6LOafDwSCx3xjBQeUKLVzgDRE4W5cw/'
+    let apiKey = 'key=AIzaSyAPrdN8mGO-3guf4lUetqYuyWjwK4273B0';
+    let uri = baseSheetUri + '?' + apiKey;
+
+    fetch(uri)
       .then(response => response.json())
-      .then(json => this.setState({ sheet: json }))
-      .catch(error => { alert("Something horrible happened..."); console.error(error) });
+      .catch(error => { alert("Something horrible happened..."); console.error(error) })
+      .then(json => this.setState({ sheet: json }));
   }
 
   blockChange(selectedSheet) {
     this.setState({selectedSheet: selectedSheet});
-    this.getWorkoutGroup()
   }
 
-  async getWorkoutGroup()
+  getWorkoutGroup()
   {
     let baseSheetUri = 'https://sheets.googleapis.com/v4/spreadsheets/18CjgZsVNKzity6LOafDwSCx3xjBQeUKLVzgDRE4W5cw/values/'
     let selectedSheet = this.state.selectedSheet;
@@ -59,12 +63,10 @@ class App extends Component {
     let apiKey = 'key=AIzaSyAPrdN8mGO-3guf4lUetqYuyWjwK4273B0';
     let uri = baseSheetUri + selectedSheet + '!' + range + '?' + apiKey;
 
-    console.log(uri);
-
-    await fetch(uri)
+    fetch(uri)
       .then(response => response.json())
-      .then(json => this.setState({ workouts: json }))
-      .catch(error => console.error("Something horrible happened...", error));
+      .catch(error => console.error("Something horrible happened...", error))
+      .then(json => this.setState({ workouts: json }));
   }
 }
 
