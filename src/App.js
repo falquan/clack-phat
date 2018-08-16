@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import BlockGroup from './BlockGroup';
 import WorkoutGroup from './WorkoutGroup';
 
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -62,7 +61,7 @@ class App extends Component {
     let selectedSheet = sheetName;
     let range = 'A2:P12';
     let apiKey = 'key=AIzaSyAPrdN8mGO-3guf4lUetqYuyWjwK4273B0';
-    let uri = baseSheetUri + selectedSheet + '!' + range + '?' + apiKey;
+    let uri = baseSheetUri + encodeURIComponent(selectedSheet) + '!' + range + '?' + apiKey;
 
     fetch(uri)
       .then(response => response.json())
