@@ -1,5 +1,11 @@
 a.Block-block {
     width: 10em;
     display: inline-block;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+a.Block-block:hover {
+    color: gray;
 }
 

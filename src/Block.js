@@ -14,7 +14,7 @@ class Block extends Component {
   render() {
     return (
       this.props.blocks.map(block => 
-        <a className='Block-block'
+        <a key={block.properties.sheetId} className='Block-block'
            onClick={(e) => this.click(block.properties.title, e)}>
             {block.properties.title}
         </a>)
