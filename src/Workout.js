@@ -6,6 +6,8 @@ import './Workout.css';
 
 class Workout extends Component {
   render() {
+    console.log(this.props.test);
+    
     return (
       <div>
         {this.props.workouts.map(group =>

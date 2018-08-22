@@ -9,7 +9,10 @@ class WorkoutGroup extends Component {
     return (
       <div className="WorkoutGroup-workouts">
         <h3>{this.props.selectedSheet}</h3>
-        <Workout workouts={this.props.workoutGroups.values} selectedSheet={this.props.selectedSheet} />
+        <Workout
+          workouts={this.props.workoutGroups.values}
+          selectedSheet={this.props.selectedSheet}
+          test={this.props.test} />
       </div>
     );
   }
