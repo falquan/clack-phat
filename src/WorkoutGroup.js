@@ -6,13 +6,15 @@ import './WorkoutGroup.css';
 
 class WorkoutGroup extends Component {
   render() {
+    console.log(this.props.hierarchicalWorkout);
+
     return (
       <div className="WorkoutGroup-workouts">
         <h3>{this.props.selectedSheet}</h3>
-        <Workout
+        {/* <Workout
           workouts={this.props.workoutGroups.values}
           selectedSheet={this.props.selectedSheet}
-          test={this.props.test} />
+          hierarchicalWorkout={this.props.hierarchicalWorkout} /> */}
       </div>
     );
   }

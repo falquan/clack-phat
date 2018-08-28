@@ -6,13 +6,14 @@ import './Workout.css';
 
 class Workout extends Component {
   render() {
-    console.log(this.props.test);
+    console.log(this.props.hierarchicalWorkout);
     
     return (
       <div>
-        {this.props.workouts.map(group =>
+        {/* {this.props.workouts.map(group => */}
+          {this.props.hierarchicalWorkout.map(group =>
           <div className="Workout-day">
-            <ExerciseGroup exercises={group} />
+            {/* <ExerciseGroup exercises={group} /> */}
           </div>
         )}
       </div>
