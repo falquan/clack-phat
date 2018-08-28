@@ -30,13 +30,13 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Clack-Phat</h1>
         </header>
-        <BlockGroup
-          blocks={this.state.sheet.sheets}
-          onBlockChange={this.blockChange} />
         <WorkoutGroup
           selectedSheet={this.state.selectedSheet}
           workoutGroups={this.state.workouts}
           test={this.state.hierarchicalWorkout} />
+        <BlockGroup
+          blocks={this.state.sheet.sheets}
+          onBlockChange={this.blockChange} />
       </div>
     );
   }
@@ -70,10 +70,16 @@ class App extends Component {
           // skip it, placeholder
         } else if (isNaN(exercise[0])) {
           // is "bonus" or "inspirational"
-          superSet.push({number: 0, isBonus: exercise[0].toLowerCase().startsWith('bonus'), set: exercise});
+          superSet.push({
+            number: 0,
+            isBonus: exercise[0].toLowerCase().startsWith('bonus'),
+            set: exercise});
         } else {
           // regular
-          superSet.push({number: exercise[0], isBonus: false, set: exercise.slice(1)});
+          superSet.push({
+            number: exercise[0],
+            isBonus: false,
+            set: exercise.slice(1)});
         }
       }
 
@@ -85,7 +91,7 @@ class App extends Component {
         superSets: superSet});
     }
 
-    this.setState({ hierarchicalWorkout: allExercises });
+    return allExercises;
   }
 
   getWorkoutGroup(sheetName)
@@ -100,9 +106,11 @@ class App extends Component {
       .then(response => response.json())
       .catch(error => console.error("Something horrible happened...", error))
       .then(json => {
+        var allExercises = this.scrubData(json);
+
         this.setState({ selectedSheet: json.range.split("!")[0] });
         this.setState({ workouts: json });
-        this.scrubData(json);
+        this.setState({ hierarchicalWorkout: allExercises })
       });
   }
 }
