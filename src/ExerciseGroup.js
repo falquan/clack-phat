@@ -17,7 +17,7 @@ class ExerciseGroup extends Component {
           </div>
         )}
       </div>
-      );
+    );
   }
 }
 

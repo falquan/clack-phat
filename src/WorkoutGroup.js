@@ -6,8 +6,6 @@ import './WorkoutGroup.css';
 
 class WorkoutGroup extends Component {
   render() {
-    console.log(this.props.hierarchicalWorkout);
-
     return (
       <div className="WorkoutGroup-workoutGroup">
         <div className="WorkoutGroup-workouts">
@@ -16,7 +14,7 @@ class WorkoutGroup extends Component {
         </div>
         <div className="WorkoutGroup-displayName">{this.props.selectedBlock}</div>
       </div>
-      );
+    );
   }
 }
 

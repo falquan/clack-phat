@@ -10,7 +10,7 @@ class Exercise extends Component {
           <li className="Exercise-exercise">{exercise}</li>
         )}
       </ul>
-      );
+    );
   }
 }
 
