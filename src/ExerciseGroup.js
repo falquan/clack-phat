@@ -2,15 +2,22 @@ import React, { Component } from 'react';
 
 import Exercise from './Exercise';
 
-//import './ExerciseGroup.css'
+import './ExerciseGroup.css'
 
 class ExerciseGroup extends Component {
   render() {
     return (
-        this.props.exercises.map(exercise => 
-          <div>{<Exercise exercise={exercise} />}</div>
-        )
-    );
+      <div className="ExerciseGroup-exerciseGroup">
+        {this.props.hierarchicalExercises.map(exercise => 
+          <div className="ExerciseGroup-set">
+            <div className="ExerciseGroup-setNumber">{exercise.number}</div>
+            <div className="ExerciseGroup-exercises">
+              <Exercise exercise={exercise.set} />
+            </div>
+          </div>
+        )}
+      </div>
+      );
   }
 }
 

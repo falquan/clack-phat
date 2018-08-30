@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
-import ReactLogState from 'react-log-state';
 
-import App from './App';
+import ClackPhat from './ClackPhat';
 
 import './index.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<ClackPhat />, document.getElementById('root'));
 registerServiceWorker();

@@ -11,11 +11,11 @@ class BlockGroup extends Component {
 
   render() {
     return (
-      <nav>
+      <div className="BlockGroup-blockGroup">
         <Block
           blocks={this.props.blocks}
           onBlockChange={this.blockChange} />
-      </nav>
+      </div>
     );
   }
 
