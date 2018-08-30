@@ -7,8 +7,11 @@
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.4"
   },
+<<<<<<< HEAD
   "devDependencies": {
   },
+=======
+>>>>>>> 0c393b28deb34cb694eb8539de8d1acccdb83189
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
