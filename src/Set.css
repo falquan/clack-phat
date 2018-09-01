@@ -1,15 +1,15 @@
-.ExerciseGroup-set {
+.Set-set {
     background: lightgray;
     margin-bottom: 1em;
     padding: 1em;
     clear: both;
 }
 
-.ExerciseGroup-setNumber {
+.Set-setNumber {
     float: left;
     font-size: 200%;
 }
 
-.ExerciseGroup-exercises {
+.Set-exercises {
     margin-left: 2em;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import DayNavigation from './DayNavigation.js';
 import BlockGroup from './BlockGroup';
 import WorkoutGroup from './WorkoutGroup';
 
@@ -30,6 +31,8 @@ class ClackPhat extends Component {
         <header className="ClackPhat-header">
           <h1 className="ClackPhat-title">Clack-Phat</h1>
         </header>
+        <DayNavigation 
+          hierarchicalWorkout={this.state.hierarchicalWorkout} />
         <WorkoutGroup
           selectedBlock={this.state.selectedBlock}
           hierarchicalWorkout={this.state.hierarchicalWorkout} />
