@@ -1,12 +1,13 @@
 {
   "name": "clack-phat",
-  "version": "0.1.0",
+  "version": "0.2.2",
   "private": true,
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "^1.1.5"
   },
+  "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

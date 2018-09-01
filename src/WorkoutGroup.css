@@ -1,3 +1,7 @@
 .WorkoutGroup-workouts {
     margin: 2em;
 }
+
+.WorkoutGroup-displayName {
+    font-size: 200%;
+}
