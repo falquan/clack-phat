@@ -1,0 +1,15 @@
+.DayNavigation-days {
+    text-align: center;
+}
+
+.DayNavigation-day {
+    margin-right: 1em;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.DayNavigation-day:hover {
+    color: gray;
+}
+
