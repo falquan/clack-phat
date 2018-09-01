@@ -1,0 +1,15 @@
+.ExerciseGroup-set {
+    background: lightgray;
+    margin-bottom: 1em;
+    padding: 1em;
+    clear: both;
+}
+
+.ExerciseGroup-setNumber {
+    float: left;
+    font-size: 200%;
+}
+
+.ExerciseGroup-exercises {
+    margin-left: 2em;
+}

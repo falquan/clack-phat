@@ -7,10 +7,13 @@ import './Workout.css';
 class Workout extends Component {
   render() {
     return (
-      <div>
-        {this.props.workouts.map(group =>
+      <div className="Workout-workout">
+        {this.props.hierarchicalWorkout.map(group => 
           <div className="Workout-day">
-            <ExerciseGroup exercises={group} />
+            <div className="Workout-displayName">{group.displayName}</div>
+            <div className="Workout-superSets">
+              <ExerciseGroup hierarchicalExercises={group.superSets} />
+            </div>
           </div>
         )}
       </div>

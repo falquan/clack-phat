@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 
+import './Exercise.css';
+
 class Exercise extends Component {
   render() {
     return (
-      <pre>{this.props.exercise}</pre>
+      <ul className="Exercise-exercises">
+        {this.props.exercise.map(exercise => 
+          <li className="Exercise-exercise">{exercise}</li>
+        )}
+      </ul>
     );
   }
 }

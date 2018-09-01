@@ -1,3 +1,10 @@
-.Workout-day {
-    background: lightgray;
+.Workout-superSets {
+    margin-bottom: 1em;
+}
+
+.Workout-displayName {
+    margin-top: 1em;
+    font-size: 250%;
+    text-align: center;
+    text-transform: uppercase;
 }

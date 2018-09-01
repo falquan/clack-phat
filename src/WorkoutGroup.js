@@ -7,9 +7,12 @@ import './WorkoutGroup.css';
 class WorkoutGroup extends Component {
   render() {
     return (
-      <div className="WorkoutGroup-workouts">
-        <h3>{this.props.selectedSheet}</h3>
-        <Workout workouts={this.props.workoutGroups.values} selectedSheet={this.props.selectedSheet} />
+      <div className="WorkoutGroup-workoutGroup">
+        <div className="WorkoutGroup-workouts">
+          <Workout
+            hierarchicalWorkout={this.props.hierarchicalWorkout} />
+        </div>
+        <div className="WorkoutGroup-displayName">{this.props.selectedBlock}</div>
       </div>
     );
   }
