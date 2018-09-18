@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import DayNavigation from './DayNavigation.js';
+import Config from './Config';
+import DayNavigation from './DayNavigation';
 import BlockGroup from './BlockGroup';
 import WorkoutGroup from './WorkoutGroup';
 
@@ -19,8 +20,7 @@ class ClackPhat extends Component {
     hierarchicalWorkout: [ { superSets: [] } ]
   }
 
-  componentDidMount()
-  {
+  componentDidMount() {
     this.getSheetData();
     this.getWorkoutGroup(this.state.selectedBlock);
   }
@@ -44,9 +44,9 @@ class ClackPhat extends Component {
   }
 
   getSheetData() {
-    let baseSheetUri = 'https://sheets.googleapis.com/v4/spreadsheets/18CjgZsVNKzity6LOafDwSCx3xjBQeUKLVzgDRE4W5cw/'
-    let apiKey = 'key=AIzaSyAPrdN8mGO-3guf4lUetqYuyWjwK4273B0';
-    let uri = baseSheetUri + '?' + apiKey;
+    let baseSheetUri = 'https://sheets.googleapis.com/v4/spreadsheets/' + Config.baseSheetId + '/';
+    // let apiKey = 'key=AIzaSyAPrdN8mGO-3guf4lUetqYuyWjwK4273B0';
+    let uri = baseSheetUri + '?' + 'key=' + Config.apiKey;
 
     fetch(uri)
       .then(response => response.json())
@@ -98,11 +98,11 @@ class ClackPhat extends Component {
 
   getWorkoutGroup(sheetName)
   {
-    let baseSheetUri = 'https://sheets.googleapis.com/v4/spreadsheets/18CjgZsVNKzity6LOafDwSCx3xjBQeUKLVzgDRE4W5cw/values/'
+    let baseSheetUri = 'https://sheets.googleapis.com/v4/spreadsheets/' + Config.baseSheetId + '/values/';
     let selectedSheet = sheetName;
     let range = 'A2:P12';
-    let apiKey = 'key=AIzaSyAPrdN8mGO-3guf4lUetqYuyWjwK4273B0';
-    let uri = baseSheetUri + encodeURIComponent(selectedSheet) + '!' + range + '?' + apiKey;
+    // let apiKey = 'key=AIzaSyAPrdN8mGO-3guf4lUetqYuyWjwK4273B0';
+    let uri = baseSheetUri + encodeURIComponent(selectedSheet) + '!' + range + '?' + 'key=' + Config.apiKey;
 
     fetch(uri)
       .then(response => response.json())
