@@ -9,8 +9,6 @@ class Block extends Component {
     this.click = this.click.bind(this);
   }
 
-  state = { selected: {} }
-
   render() {
     return (
       <div className="Block-block">
