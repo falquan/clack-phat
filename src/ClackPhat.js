@@ -36,6 +36,7 @@ class ClackPhat extends Component {
         <WorkoutGroup
           selectedBlock={this.state.selectedBlock}
           hierarchicalWorkout={this.state.hierarchicalWorkout} />
+        <a name="block" />
         <BlockGroup
           blocks={this.state.block.blocks}
           onBlockChange={this.blockChange} />

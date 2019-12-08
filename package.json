@@ -1,6 +1,6 @@
 {
   "name": "clack-phat",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "private": true,
   "dependencies": {
     "react": "^16.12.0",

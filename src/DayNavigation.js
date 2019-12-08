@@ -14,11 +14,12 @@ class DayNavigation extends Component {
       <nav>
         <div className="DayNavigation-days">
             {this.props.hierarchicalWorkout.map(workout => 
-            <a key={workout.day} className='DayNavigation-day'
+              <a key={workout.day} className='DayNavigation-day'
                 onClick={(e) => this.click(workout.day, e)}>
                 {workout.displayName}
-            </a>
+              </a>
             )}
+            <a href="#block">...</a>
         </div>
       </nav>
     );
